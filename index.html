@@ -17,19 +17,16 @@ button {
 }
 
 button:hover {
-  transform: scale(1.5);  /* powiększenie */
-  background-color: rgb(208, 50, 29); /* jaśniejszy pomarańcz */
-  cursor: zoom-in; /* zmienia kursor na lupę */
-  
+  transform: scale(1.5);
+  background-color: rgb(208, 50, 29);
+  cursor: zoom-in;
 }
-
 
 header {
     background-image: url('https://oeconline.org/wp-content/uploads/2014/11/Dollarphotoclub_57954146.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -43,7 +40,7 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 0;
 }
 
@@ -55,7 +52,7 @@ header div {
 body {
     background-color: #caf0f8;
     font-family: Sans-serif;
-    margin: 0; 
+    margin: 0;
 }
 </style>
 
@@ -67,7 +64,6 @@ body {
         </div>
     </header>
 
-
   <!----------------------------------------------------------------------------------------------------------------------->
 
   <section>
@@ -78,9 +74,46 @@ body {
         <li> <b>GWARANTUJEMY</b> najwyższej jakości produkt <br> jednak trzeba <b>uważać</b> przy piciu <br>ponieważ jak wypijesz miniimum <b>20 butelek</b> <br> zostajesz przeziębiony w chinczyka, <br>znajdujemy cie i lecisz z nami do chimalajów</li>
     </ul>
 </section>
+
 <section style="float: left; font-size: 90px; margin-left: 300px;">
-<P>CLICK TO BUY</P> <br>
-<a href="https://ptoszek.pl/"><button style="font-size: 150px; background-color: rgb(255, 102, 0); color: #caf0f8; border-radius: 60px; cursor: pointer;"> CLICK ME </button></a>
+  <p>CLICK TO BUY</p> <br>
+  <button id="crazyButton">CLICK ME</button>
+  <p id="status" style="font-size: 40px; color: black; margin-top: 30px;"></p>
 </section>
+
+<script>
+const button = document.getElementById('crazyButton');
+const status = document.getElementById('status');
+
+let clickCount = 0;
+let timer;
+
+button.addEventListener('click', () => {
+  clickCount++;
+
+  // uruchamia licznik po pierwszym kliknięciu
+  if (clickCount === 1) {
+    timer = setTimeout(() => {
+      clickCount = 0;
+      status.textContent = 'Za wolno 😅 Spróbuj ponownie!';
+    }, 1000); // limit 2 sekundy
+  }
+
+  // wyświetlanie liczby kliknięć
+  status.textContent = `Kliknięcia: ${clickCount}/10`;
+
+  // jeśli użytkownik kliknie 10 razy w 2 sekundy
+  if (clickCount === 10) {
+    clearTimeout(timer);
+    status.textContent = 'Udało się! 🚀 Przekierowanie...';
+    button.disabled = true;
+    button.style.backgroundColor = 'green';
+    setTimeout(() => {
+      window.location.href = "https://ptoszek.pl/";
+    }, 1000);
+  }
+});
+</script>
+
 </body>
 </html>
