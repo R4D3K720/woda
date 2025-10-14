@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+button {
+  font-size: 150px;
+  background-color: rgb(255, 102, 0);
+  color: #caf0f8;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.5);  /* powiększenie */
+  background-color: rgb(208, 50, 29); /* jaśniejszy pomarańcz */
+  cursor: zoom-in; /* zmienia kursor na lupę */
+  
+}
+
+
+header {
+    background-image: url('https://oeconline.org/wp-content/uploads/2014/11/Dollarphotoclub_57954146.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 120px;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 0;
+}
+
+header div {
+    position: relative;
+    z-index: 1;
+}
+
+body {
+    background-color: #caf0f8;
+    font-family: Sans-serif;
+    margin: 0; 
+}
+</style>
+
+<body> 
+   <!--------------------------------------------NAGŁÓWEK --------------------------------------------------------->
+    <header style="text-align: center; font-size: 50px;"> 
+        <div style="height: 80px; display: flex; justify-content: center; align-items: center; margin: 0 auto; border: solid; width: 800px; border-radius: 10px; background-color: rgba(255, 255, 255, 0.2);">
+            ---| Sklep wodny |---
+        </div>
+    </header>
+
+
+  <!----------------------------------------------------------------------------------------------------------------------->
+
+  <section>
+    <img src="Woda.png" alt="Tu powina byc woda" style="height: 800px; margin-left: 80px; float: left; margin-top: 50px; border:solid black; border-radius: 30px;">
+    <ul style="float: left; font-size: 30px; margin-left: 50px; margin-top: 200px;">
+        <li><b>Wysoko hinczy</b> himalaje ta woda zostala <br> pobrana z chimalajskich wzgorz przez <br>staroswieckich chinczykow</li> <br>
+        <li>Występuje w <b>dwóch</b> rodzajach.<br> <b>Pierwsza</b> klaszyczna, a <b>druga</b> woda<br> permium wyodbyta przez chinskich <br> dziecaków którzy bawili się w błocie </li> <br>
+        <li> <b>GWARANTUJEMY</b> najwyższej jakości produkt <br> jednak trzeba <b>uważać</b> przy piciu <br>ponieważ jak wypijesz miniimum <b>20 butelek</b> <br> zostajesz przeziębiony w chinczyka, <br>znajdujemy cie i lecisz z nami do chimalajów</li>
+    </ul>
+</section>
+<section style="float: left; font-size: 90px; margin-left: 300px;">
+<P>CLICK TO BUY</P> <br>
+<a href="https://ptoszek.pl/"><button style="font-size: 150px; background-color: rgb(255, 102, 0); color: #caf0f8; border-radius: 60px; cursor: pointer;"> CLICK ME </button></a>
+</section>
+</body>
+</html>
